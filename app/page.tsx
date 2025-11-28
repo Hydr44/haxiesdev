@@ -12,24 +12,56 @@ export default function Home() {
   };
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 relative overflow-hidden">
+      {/* Animated background */}
+      <div className="fixed inset-0 -z-10 animated-bg grid-pattern opacity-30" />
+      <div className="fixed inset-0 -z-10 bg-gradient-to-b from-transparent via-primary/5 to-background" />
+
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-50/50">
-        <Section maxWidth="2xl" className="text-center py-32">
+      <section className="min-h-screen flex items-center justify-center relative">
+        {/* Floating orbs */}
+        <motion.div
+          animate={{
+            x: [0, 100, 0],
+            y: [0, -50, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            x: [0, -80, 0],
+            y: [0, 50, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"
+        />
+
+        <Section maxWidth="2xl" className="text-center py-32 relative z-10">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-8 leading-tight"
+            className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-tight"
           >
-            Costruiamo esperienze digitali su misura.
+            <span className="gradient-text">Costruiamo esperienze</span>
+            <br />
+            <span className="text-foreground">digitali su misura.</span>
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl sm:text-2xl text-foreground/70 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl sm:text-2xl text-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
             Haxies Dev trasforma la tua attività in un prodotto digitale moderno: App, Siti Web e Software personalizzati.
           </motion.p>
@@ -64,17 +96,17 @@ export default function Home() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="py-12 bg-white border-y border-gray-100"
+        className="py-12 glass border-y border-primary/20 relative z-10"
       >
         <Section>
-          <p className="text-center text-foreground/60 text-sm font-medium">
+          <p className="text-center text-foreground/70 text-sm font-medium">
             Studio digitale indipendente fondato da Emmanuel Scozzarini.
           </p>
         </Section>
       </motion.section>
 
       {/* Cosa facciamo */}
-      <section id="servizi" className="py-32 bg-white">
+      <section id="servizi" className="py-32 relative z-10">
         <Section>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -83,8 +115,8 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-              Cosa facciamo
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+              <span className="gradient-text">Cosa facciamo</span>
             </h2>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
               Soluzioni digitali su misura per trasformare la tua attività
@@ -97,16 +129,19 @@ export default function Home() {
                 icon: "📱",
                 title: "Sviluppo App",
                 description: "App native e cross-platform per iOS e Android. Soluzioni personalizzate per gestire la tua attività, coinvolgere i clienti o automatizzare processi interni.",
+                gradient: "from-primary/20 to-secondary/20",
               },
               {
                 icon: "🌐",
                 title: "Siti Web moderni",
                 description: "Siti web veloci, responsive e ottimizzati per i motori di ricerca. Landing page, siti vetrina e piattaforme e-commerce con design moderno e user experience curata.",
+                gradient: "from-secondary/20 to-accent/20",
               },
               {
                 icon: "⚙️",
                 title: "Software su misura",
                 description: "Software gestionali, automazioni e piccoli SaaS personalizzati. Integrazioni con servizi esistenti e strumenti interni per ottimizzare i tuoi processi.",
+                gradient: "from-accent/20 to-primary/20",
               },
             ].map((service, index) => (
               <motion.div
@@ -115,16 +150,21 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
-                className="bg-white p-8 rounded-3xl border border-gray-100 hover:shadow-xl transition-all duration-300"
+                whileHover={{ y: -12, scale: 1.02 }}
+                className="glass-strong p-8 rounded-3xl border border-primary/20 hover:border-primary/40 transition-all duration-300 group relative overflow-hidden"
               >
-                <div className="text-5xl mb-6">{service.icon}</div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-foreground/70 leading-relaxed">
-                  {service.description}
-                </p>
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                <div className="relative z-10">
+                  <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -132,7 +172,7 @@ export default function Home() {
       </section>
 
       {/* Perché Haxies Dev */}
-      <section className="py-32 bg-gradient-to-b from-white to-gray-50/50">
+      <section className="py-32 relative z-10">
         <Section>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -141,8 +181,8 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-              Perché Haxies Dev
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+              <span className="gradient-text">Perché Haxies Dev</span>
             </h2>
           </motion.div>
 
@@ -175,9 +215,14 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
+                className="text-center glass p-6 rounded-2xl border border-primary/10 hover:border-primary/30 transition-all duration-300"
               >
-                <div className="text-4xl mb-4">{feature.icon}</div>
+                <motion.div
+                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  className="text-4xl mb-4 inline-block"
+                >
+                  {feature.icon}
+                </motion.div>
                 <h3 className="text-xl font-bold text-foreground mb-3">
                   {feature.title}
                 </h3>
@@ -191,7 +236,7 @@ export default function Home() {
       </section>
 
       {/* Preview Portfolio */}
-      <section className="py-32 bg-white">
+      <section className="py-32 relative z-10">
         <Section>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -200,8 +245,8 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-              Progetti
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+              <span className="gradient-text">Progetti</span>
             </h2>
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
               Alcuni dei progetti che abbiamo realizzato
@@ -247,34 +292,34 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-32 bg-gradient-to-br from-primary to-primary/90 text-white">
-        <Section maxWidth="2xl" className="text-center">
+      <section className="py-32 relative z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 blur-3xl" />
+        <Section maxWidth="2xl" className="text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="glass-strong p-12 rounded-3xl border border-primary/30"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6 gradient-text">
               Hai un&apos;idea o un&apos;attività da digitalizzare?
             </h2>
-            <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
+            <p className="text-xl text-foreground/80 mb-12 max-w-2xl mx-auto">
               Parliamone senza impegno.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 href="https://wa.me/393921723028"
-                variant="secondary"
+                variant="primary"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-primary hover:bg-gray-100"
               >
                 Scrivimi su WhatsApp
               </Button>
               <Button
                 href="/contact"
                 variant="ghost"
-                className="text-white border-white hover:bg-white/10"
               >
                 Vai alla pagina contatti
               </Button>
@@ -285,4 +330,3 @@ export default function Home() {
     </div>
   );
 }
-

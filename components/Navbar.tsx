@@ -31,15 +31,15 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm"
+          ? "glass backdrop-blur-xl border-b border-primary/20"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-foreground">
-            Haxies Dev
+          <Link href="/" className="text-2xl font-bold">
+            <span className="gradient-text">Haxies Dev</span>
           </Link>
 
           {/* Desktop Menu */}
@@ -48,9 +48,10 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative group"
               >
                 {link.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
           </div>
@@ -68,11 +69,11 @@ export default function Navbar() {
                     ? { rotate: 45, y: 8 }
                     : { rotate: 0, y: 0 }
                 }
-                className="block h-0.5 w-full bg-foreground transition-all"
+                className="block h-0.5 w-full bg-primary transition-all"
               />
               <motion.span
                 animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="block h-0.5 w-full bg-foreground transition-all"
+                className="block h-0.5 w-full bg-primary transition-all"
               />
               <motion.span
                 animate={
@@ -80,7 +81,7 @@ export default function Navbar() {
                     ? { rotate: -45, y: -8 }
                     : { rotate: 0, y: 0 }
                 }
-                className="block h-0.5 w-full bg-foreground transition-all"
+                className="block h-0.5 w-full bg-primary transition-all"
               />
             </div>
           </button>
@@ -94,7 +95,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-100"
+            className="md:hidden glass-strong border-t border-primary/20"
           >
             <div className="px-6 py-6 space-y-4">
               {navLinks.map((link) => (
@@ -102,7 +103,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-base font-medium text-foreground/80 hover:text-foreground transition-colors"
+                  className="block text-base font-medium text-foreground/80 hover:text-primary transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -114,4 +115,3 @@ export default function Navbar() {
     </motion.nav>
   );
 }
-

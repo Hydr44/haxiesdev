@@ -20,9 +20,68 @@ html {
 
 body {
   font-family: var(--font-inter);
-  color: #020617;
-  background: #FFFFFF;
+  color: #FFFFFF;
+  background: #0A0A0F;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #00F5FF 0%, #7C3AED 50%, #EC4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated background */
+.animated-bg {
+  background: linear-gradient(-45deg, #0A0A0F, #1a1a2e, #16213e, #0f3460);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Grid pattern overlay */
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(0, 245, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Neon glow effect */
+.neon-glow {
+  text-shadow: 
+    0 0 10px rgba(0, 245, 255, 0.8),
+    0 0 20px rgba(0, 245, 255, 0.6),
+    0 0 30px rgba(0, 245, 255, 0.4);
 }
 
