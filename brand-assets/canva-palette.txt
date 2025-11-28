@@ -1,0 +1,31 @@
+HAXIES DEV - PALETTE COLORI CANVA
+==================================
+
+PRIMARY (Cyan Neon)
+Hex: #00F5FF
+RGB: 0, 245, 255
+
+SECONDARY (Viola)
+Hex: #7C3AED
+RGB: 124, 58, 237
+
+ACCENT (Arancione)
+Hex: #F59E0B
+RGB: 245, 158, 11
+
+ROSA (Gradienti)
+Hex: #EC4899
+RGB: 236, 72, 153
+
+BACKGROUND (Nero Scuro)
+Hex: #0A0A0F
+RGB: 10, 10, 15
+
+TESTO (Bianco)
+Hex: #FFFFFF
+RGB: 255, 255, 255
+
+TESTO SECONDARIO
+Hex: #B3B3B3
+RGB: 179, 179, 179
+
