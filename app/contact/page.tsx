@@ -236,17 +236,21 @@ export default function ContactPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6"
           >
-            <div className="glass-strong p-8 rounded-3xl border border-primary/20">
-              <h2 className="text-2xl font-bold text-foreground mb-6">
-                Altre modalità di contatto
-              </h2>
-              <p className="text-foreground/70 mb-8 leading-relaxed">
-                Preferisci contattarmi direttamente? Ecco come puoi raggiungermi.
-              </p>
+            <div className="glass-strong p-8 rounded-3xl border border-primary/20 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+              <div className="relative z-10">
+                <h2 className="text-2xl font-bold text-foreground mb-6">
+                  Altre modalità di contatto
+                </h2>
+                <p className="text-foreground/70 mb-8 leading-relaxed">
+                  Preferisci contattarmi direttamente? Ecco come puoi raggiungermi.
+                </p>
+              </div>
             </div>
 
-            <div className="glass-strong p-6 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-300 group">
-              <div className="flex items-start gap-4">
+            <div className="glass-strong p-6 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-300 group relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 opacity-20 group-hover:opacity-40 transition-opacity duration-300" />
+              <div className="relative z-10 flex items-start gap-4">
                 <Mail className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">
@@ -262,31 +266,35 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="glass-strong p-6 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-300">
-              <div className="flex items-start gap-4 mb-4">
-                <MessageCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                    WhatsApp
-                  </h3>
-                  <p className="text-foreground/70 text-sm mb-4">
-                    Risposta rapida garantita
-                  </p>
+            <div className="glass-strong p-6 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-accent/20 opacity-20 group-hover:opacity-40 transition-opacity duration-300" />
+              <div className="relative z-10">
+                <div className="flex items-start gap-4 mb-4">
+                  <MessageCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
+                      WhatsApp
+                    </h3>
+                    <p className="text-foreground/70 text-sm mb-4">
+                      Risposta rapida garantita
+                    </p>
+                  </div>
                 </div>
+                <Button
+                  href="https://wa.me/393921723028"
+                  variant="primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
+                  Scrivimi su WhatsApp
+                </Button>
               </div>
-              <Button
-                href="https://wa.me/393921723028"
-                variant="primary"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full"
-              >
-                Scrivimi su WhatsApp
-              </Button>
             </div>
 
-            <div className="glass p-6 rounded-2xl border border-primary/10">
-              <div className="flex items-start gap-4">
+            <div className="glass p-6 rounded-2xl border border-primary/10 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-primary/10 opacity-30" />
+              <div className="relative z-10 flex items-start gap-4">
                 <Clock className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
                 <div>
                   <h3 className="text-sm font-semibold text-foreground mb-2">

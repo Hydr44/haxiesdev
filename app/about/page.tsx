@@ -14,7 +14,7 @@ export default function AboutPage() {
     {
       year: "2024",
       title: "Sviluppo dei primi progetti personali",
-      description: "Realizzazione di progetti come RescueManager e JumpOn, acquisendo esperienza pratica nello sviluppo di software e app.",
+      description: "Realizzazione di progetti personali come RescueManager, acquisendo esperienza pratica nello sviluppo di software e app.",
     },
     {
       year: "2025",
@@ -71,7 +71,7 @@ export default function AboutPage() {
             Emmanuel Scozzarini
           </h2>
           <p className="text-lg text-foreground/70 leading-relaxed">
-            Sono uno sviluppatore di 20 anni, attualmente studente di informatica. La mia passione per lo sviluppo software mi ha portato a creare progetti personali come <strong className="text-primary">RescueManager</strong>, un software gestionale per autodemolizione e soccorso stradale, e <strong className="text-primary">JumpOn</strong>, un gioco mobile.
+            Sono uno sviluppatore di 20 anni, attualmente studente di informatica. La mia passione per lo sviluppo software mi ha portato a creare progetti personali come <strong className="text-primary">RescueManager</strong>, un software gestionale per autodemolizione e soccorso stradale.
           </p>
           <p className="text-lg text-foreground/70 leading-relaxed">
             La visione di Haxies Dev nasce dalla convinzione che gli strumenti digitali moderni non debbano essere appannaggio solo delle grandi aziende. Voglio portare soluzioni tecnologiche di qualità anche alle realtà locali, ai professionisti e alle piccole attività che vogliono digitalizzarsi e crescere.

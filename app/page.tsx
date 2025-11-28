@@ -155,7 +155,7 @@ export default function Home() {
                   whileHover={{ y: -12, scale: 1.02 }}
                   className="glass-strong p-8 rounded-3xl border border-primary/20 hover:border-primary/40 transition-all duration-300 group relative overflow-hidden"
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-30 group-hover:opacity-100 transition-opacity duration-300`} />
                   <div className="relative z-10">
                     <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
                       <IconComponent className="w-16 h-16 text-primary" />
