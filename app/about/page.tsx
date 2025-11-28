@@ -51,7 +51,7 @@ export default function AboutPage() {
           className="text-center"
         >
           <h1 className="text-5xl sm:text-6xl font-bold text-foreground mb-8">
-            Chi c'è dietro Haxies Dev
+            Chi c&apos;è dietro Haxies Dev
           </h1>
         </motion.div>
 
@@ -84,7 +84,7 @@ export default function AboutPage() {
               La visione di Haxies Dev nasce dalla convinzione che gli strumenti digitali moderni non debbano essere appannaggio solo delle grandi aziende. Voglio portare soluzioni tecnologiche di qualità anche alle realtà locali, ai professionisti e alle piccole attività che vogliono digitalizzarsi e crescere.
             </p>
             <p className="text-lg text-foreground/70 leading-relaxed">
-              Ogni progetto è un'opportunità per creare qualcosa di unico, che risponda alle esigenze specifiche del cliente e che faccia la differenza nel suo business.
+              Ogni progetto è un&apos;opportunità per creare qualcosa di unico, che risponda alle esigenze specifiche del cliente e che faccia la differenza nel suo business.
             </p>
           </motion.div>
         </div>

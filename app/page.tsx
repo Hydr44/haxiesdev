@@ -256,7 +256,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-              Hai un'idea o un'attività da digitalizzare?
+              Hai un&apos;idea o un&apos;attività da digitalizzare?
             </h2>
             <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
               Parliamone senza impegno.

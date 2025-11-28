@@ -114,7 +114,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all bg-white"
                 >
-                  <option value="">Seleziona un'opzione</option>
+                  <option value="">Seleziona un&apos;opzione</option>
                   <option value="app">Sviluppo App</option>
                   <option value="website">Sito Web</option>
                   <option value="software">Software su misura</option>
