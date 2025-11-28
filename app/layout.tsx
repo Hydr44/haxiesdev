@@ -14,6 +14,17 @@ export const metadata: Metadata = {
   title: "Haxies Dev - Studio digitale per app, siti web e software su misura",
   description: "Haxies Dev trasforma la tua attività in un prodotto digitale moderno: App, Siti Web e Software personalizzati. Studio digitale indipendente fondato da Emmanuel Scozzarini.",
   keywords: "sviluppo app, siti web, software su misura, digitalizzazione, Next.js, React",
+  openGraph: {
+    title: "Haxies Dev - Studio digitale per app, siti web e software su misura",
+    description: "Haxies Dev trasforma la tua attività in un prodotto digitale moderno: App, Siti Web e Software personalizzati.",
+    type: "website",
+    locale: "it_IT",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Haxies Dev - Studio digitale",
+    description: "Trasformiamo la tua attività in un prodotto digitale moderno",
+  },
 };
 
 export default function RootLayout({
