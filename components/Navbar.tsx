@@ -19,7 +19,6 @@ export default function Navbar() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/services", label: "Servizi" },
-    { href: "/portfolio", label: "Progetti" },
     { href: "/about", label: "Chi siamo" },
     { href: "/contact", label: "Contatti" },
   ];
