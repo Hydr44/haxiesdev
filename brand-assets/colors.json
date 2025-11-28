@@ -1,0 +1,50 @@
+{
+  "brand": {
+    "name": "Haxies Dev",
+    "colors": {
+      "primary": {
+        "name": "Cyan Neon",
+        "hex": "#00F5FF",
+        "rgb": "rgb(0, 245, 255)",
+        "usage": "Colore principale, accenti, link, icone"
+      },
+      "secondary": {
+        "name": "Viola",
+        "hex": "#7C3AED",
+        "rgb": "rgb(124, 58, 237)",
+        "usage": "Colore secondario, gradienti"
+      },
+      "accent": {
+        "name": "Arancione",
+        "hex": "#F59E0B",
+        "rgb": "rgb(245, 158, 11)",
+        "usage": "Accenti, badge, notifiche"
+      },
+      "background": {
+        "name": "Nero Scuro",
+        "hex": "#0A0A0F",
+        "rgb": "rgb(10, 10, 15)",
+        "usage": "Sfondo principale"
+      },
+      "foreground": {
+        "name": "Bianco",
+        "hex": "#FFFFFF",
+        "rgb": "rgb(255, 255, 255)",
+        "usage": "Testo principale"
+      }
+    },
+    "gradients": {
+      "primary": {
+        "colors": ["#00F5FF", "#7C3AED", "#EC4899", "#7C3AED", "#00F5FF"],
+        "direction": "90deg",
+        "usage": "Testo animato, elementi principali"
+      },
+      "neon": {
+        "colors": ["#00F5FF", "#7C3AED", "#EC4899"],
+        "direction": "135deg",
+        "usage": "Background, overlay"
+      }
+    }
+  }
+}
+
