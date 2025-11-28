@@ -41,7 +41,9 @@ export default function ContactPage() {
           from_email: formData.email,
           project_type: formData.projectType,
           message: formData.message,
-          to_email: "info@haxiesdev.it", // Email di destinazione
+          // NOTA: L'email di destinazione (info@haxiesdev.it) va configurata nel template EmailJS
+          // Vai su EmailJS Dashboard → Email Templates → Modifica template
+          // E imposta "To Email" = info@haxiesdev.it
         },
         publicKey
       );

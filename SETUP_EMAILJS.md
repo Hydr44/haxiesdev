@@ -33,7 +33,9 @@ EmailJS è un servizio gratuito che permette di inviare email direttamente dal f
 
 1. Vai su **Email Templates**
 2. Clicca **Create New Template**
-3. Usa questo template:
+3. **IMPORTANTE**: Nella sezione "To Email" inserisci: **info@haxiesdev.it**
+4. Nella sezione "From Name" puoi mettere: **Haxies Dev Contact Form**
+5. Usa questo template per il contenuto:
 
 ```
 Oggetto: Nuovo messaggio da Haxies Dev - {{project_type}}
@@ -53,7 +55,9 @@ Messaggio:
 Inviato da: Haxies Dev Contact Form
 ```
 
-4. **Copia il Template ID** (es: `template_xxxxx`)
+6. **Copia il Template ID** (es: `template_xxxxx`)
+
+**⚠️ ATTENZIONE**: Assicurati che nel campo "To Email" del template ci sia **info@haxiesdev.it**, altrimenti le email non arriveranno alla tua casella!
 
 ### 4. Ottieni Public Key
 
