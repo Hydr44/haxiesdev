@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MessageCircle, Clock } from "lucide-react";
+import { Mail, MessageCircle, Clock, CheckCircle, AlertCircle } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import Section from "@/components/Section";
 import Button from "@/components/Button";
 
@@ -13,11 +14,48 @@ export default function ContactPage() {
     projectType: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitMessage, setSubmitMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Grazie per il messaggio! Ti risponderemo presto.");
-    setFormData({ name: "", email: "", projectType: "", message: "" });
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+    setSubmitMessage("");
+
+    try {
+      // Configura EmailJS
+      // NOTA: Devi sostituire questi valori con i tuoi da EmailJS
+      // Vai su https://www.emailjs.com per creare un account gratuito
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
+
+      // Invia email tramite EmailJS
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          project_type: formData.projectType,
+          message: formData.message,
+          to_email: "info@haxiesdev.it", // Email di destinazione
+        },
+        publicKey
+      );
+
+      setSubmitStatus("success");
+      setSubmitMessage("Messaggio inviato con successo! Ti risponderemo presto.");
+      setFormData({ name: "", email: "", projectType: "", message: "" });
+    } catch (error) {
+      console.error("Errore invio email:", error);
+      setSubmitStatus("error");
+      setSubmitMessage("Si è verificato un errore. Puoi contattarmi direttamente via email o WhatsApp.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -27,6 +65,11 @@ export default function ContactPage() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+    // Reset status quando l'utente modifica il form
+    if (submitStatus !== "idle") {
+      setSubmitStatus("idle");
+      setSubmitMessage("");
+    }
   };
 
   return (
@@ -67,6 +110,28 @@ export default function ContactPage() {
               Invia un messaggio
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Status Message */}
+              {submitStatus !== "idle" && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`p-4 rounded-xl border ${
+                    submitStatus === "success"
+                      ? "bg-primary/10 border-primary/30 text-primary"
+                      : "bg-accent/10 border-accent/30 text-accent"
+                  }`}
+                >
+                  <div className="flex items-start gap-3">
+                    {submitStatus === "success" ? (
+                      <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                    ) : (
+                      <AlertCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                    )}
+                    <p className="text-sm">{submitMessage}</p>
+                  </div>
+                </motion.div>
+              )}
+
               <div>
                 <label
                   htmlFor="name"
@@ -81,7 +146,8 @@ export default function ContactPage() {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all bg-background/50 text-foreground placeholder:text-foreground/40"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all bg-background/50 text-foreground placeholder:text-foreground/40 disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Il tuo nome"
                 />
               </div>
@@ -100,7 +166,8 @@ export default function ContactPage() {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all bg-background/50 text-foreground placeholder:text-foreground/40"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all bg-background/50 text-foreground placeholder:text-foreground/40 disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="tua@email.com"
                 />
               </div>
@@ -118,7 +185,8 @@ export default function ContactPage() {
                   required
                   value={formData.projectType}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all bg-background/50 text-foreground"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all bg-background/50 text-foreground disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <option value="">Seleziona un&apos;opzione</option>
                   <option value="app">Sviluppo App</option>
@@ -142,13 +210,19 @@ export default function ContactPage() {
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all resize-none bg-background/50 text-foreground placeholder:text-foreground/40"
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all resize-none bg-background/50 text-foreground placeholder:text-foreground/40 disabled:opacity-50 disabled:cursor-not-allowed"
                   placeholder="Raccontaci del tuo progetto..."
                 />
               </div>
 
-              <Button type="submit" variant="primary" className="w-full">
-                Invia messaggio
+              <Button 
+                type="submit" 
+                variant="primary" 
+                className="w-full"
+                onClick={() => {}}
+              >
+                {isSubmitting ? "Invio in corso..." : "Invia messaggio"}
               </Button>
             </form>
           </motion.div>
@@ -226,5 +300,5 @@ export default function ContactPage() {
         </div>
       </Section>
     </div>
-  );
+    );
 }
