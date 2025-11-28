@@ -83,8 +83,28 @@ Inviato da: Haxies Dev Contact Form
 
 ### 4. Ottieni Public Key
 
-1. Vai su **Account** → **General**
-2. **Copia la Public Key** (es: `xxxxxxxxxxxxx`)
+La Public Key si trova in un punto specifico del dashboard:
+
+**Metodo 1 (più facile)**:
+1. Vai su **Account** (icona utente in alto a destra)
+2. Clicca su **General** o **Account Settings**
+3. Cerca la sezione **API Keys** o **Public Key**
+4. **Copia la Public Key** (es: `xxxxxxxxxxxxx`)
+
+**Metodo 2 (alternativo)**:
+1. Vai su **Integration** nel menu laterale
+2. Cerca la sezione **API Keys**
+3. Troverai la **Public Key** lì
+
+**Metodo 3 (se non la trovi)**:
+1. Vai su **Email Services**
+2. Clicca sul tuo servizio (service_qhwcd92)
+3. A volte la Public Key è visibile lì
+
+**⚠️ IMPORTANTE**: 
+- La Public Key è diversa dal Service ID
+- È una stringa lunga tipo: `AbCdEf123456GhIjKl789012`
+- Se non la vedi, potrebbe essere nascosta - cerca un pulsante "Show" o "Reveal"
 
 ### 5. Configura Variabili d'Ambiente
 
