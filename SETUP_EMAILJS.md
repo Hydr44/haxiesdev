@@ -24,10 +24,32 @@ EmailJS è un servizio gratuito che permette di inviare email direttamente dal f
    - **Gmail** (più semplice)
    - **Outlook**
    - **Yahoo**
-   - Altri provider SMTP
+   - **SMTP** (per provider personalizzati come Aruba, cPanel, ecc.)
 
-4. Segui le istruzioni per connettere il tuo account email
-5. **Copia il Service ID** (es: `service_xxxxx`)
+#### Se hai Aruba Mail (o altri provider SMTP):
+
+1. Scegli **SMTP** come servizio
+2. Inserisci questi dati SMTP di Aruba:
+
+```
+SMTP Server: smtps.aruba.it
+SMTP Port: 465 (SSL) oppure 587 (TLS)
+SMTP Username: info@haxiesdev.it (la tua email completa)
+SMTP Password: [la password della tua email Aruba]
+```
+
+**Nota**: 
+- Porta 465 usa SSL/TLS
+- Porta 587 usa STARTTLS
+- Entrambe funzionano, prova prima la 465
+
+3. Clicca **Create Service**
+4. **Copia il Service ID** (es: `service_xxxxx`)
+
+**⚠️ IMPORTANTE per Aruba**:
+- Assicurati che la password sia quella della casella email, non quella del pannello Aruba
+- Se non funziona, prova a verificare le impostazioni SMTP nel pannello Aruba
+- Alcuni provider richiedono di abilitare "Accesso da applicazioni esterne" o "SMTP abilitato"
 
 ### 3. Crea Email Template
 
