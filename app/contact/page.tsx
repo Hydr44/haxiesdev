@@ -51,6 +51,11 @@ export default function ContactPage() {
       setSubmitStatus("success");
       setSubmitMessage("Messaggio inviato con successo! Ti risponderemo presto.");
       setFormData({ name: "", email: "", projectType: "", message: "" });
+      
+      // Redirect to success page after 1 second (for Google Ads conversion tracking)
+      setTimeout(() => {
+        window.location.href = "/contact/success";
+      }, 1000);
     } catch (error) {
       console.error("Errore invio email:", error);
       setSubmitStatus("error");
