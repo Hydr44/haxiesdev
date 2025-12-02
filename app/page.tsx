@@ -5,7 +5,6 @@ import { Smartphone, Globe, Settings, Target, Zap, Handshake, Rocket, Clock, Che
 import Button from "@/components/Button";
 import Section from "@/components/Section";
 import TrustBar from "@/components/TrustBar";
-import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   const scrollToServices = () => {
@@ -191,8 +190,167 @@ export default function Home() {
         </Section>
       </section>
 
-      {/* Testimonianze */}
-      <Testimonials />
+      {/* Come lavoriamo */}
+      <section className="py-32 relative z-10">
+        <Section>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+              <span className="gradient-text">Come lavoriamo</span>
+            </h2>
+            <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+              Un processo chiaro e trasparente, dalla consulenza alla consegna
+            </p>
+          </motion.div>
+
+          <div className="space-y-8">
+            {[
+              {
+                step: "01",
+                title: "Consulenza iniziale",
+                description: "Analizziamo insieme le tue esigenze, obiettivi e budget. Capiamo cosa vuoi ottenere e come possiamo aiutarti.",
+                icon: Handshake,
+              },
+              {
+                step: "02",
+                title: "Proposta e preventivo",
+                description: "Ti presentiamo una proposta dettagliata con tempi, costi e fasi del progetto. Niente sorprese, tutto trasparente.",
+                icon: Target,
+              },
+              {
+                step: "03",
+                title: "Sviluppo",
+                description: "Lavoriamo al tuo progetto con aggiornamenti regolari. Puoi seguire l&apos;avanzamento e dare feedback in tempo reale.",
+                icon: Rocket,
+              },
+              {
+                step: "04",
+                title: "Consegna e supporto",
+                description: "Consegna del progetto completo con documentazione. Supporto post-consegna incluso per assicurarci che tutto funzioni perfettamente.",
+                icon: CheckCircle,
+              },
+            ].map((item, index) => {
+              const IconComponent = item.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="glass-strong p-8 rounded-3xl border border-primary/20 hover:border-primary/40 transition-all duration-300 group relative overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start">
+                    <div className="flex-shrink-0">
+                      <div className="text-6xl font-bold text-primary/30 mb-2">{item.step}</div>
+                      <IconComponent className="w-12 h-12 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-foreground/70 leading-relaxed text-lg">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </Section>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-32 relative z-10">
+        <Section maxWidth="4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6">
+              <span className="gradient-text">Domande frequenti</span>
+            </h2>
+            <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
+              Risposte alle domande più comuni
+            </p>
+          </motion.div>
+
+          <div className="space-y-6">
+            {[
+              {
+                question: "Quanto costa sviluppare un&apos;app o un sito web?",
+                answer: "Il costo dipende dalla complessità del progetto. Per un preventivo personalizzato, contattaci per una consulenza gratuita. Ti forniremo un preventivo dettagliato e trasparente senza impegno.",
+              },
+              {
+                question: "Quanto tempo serve per completare un progetto?",
+                answer: "I tempi variano in base alla complessità: un sito web semplice può richiedere 2-4 settimane, mentre un&apos;app più complessa può richiedere 2-4 mesi. Ti forniremo una timeline dettagliata nella proposta.",
+              },
+              {
+                question: "Fornite supporto dopo la consegna?",
+                answer: "Sì, includiamo supporto post-consegna per assicurarci che tutto funzioni perfettamente. Inoltre, offriamo piani di manutenzione e aggiornamenti su richiesta.",
+              },
+              {
+                question: "Posso vedere esempi di progetti realizzati?",
+                answer: "Alcuni progetti sono riservati per privacy dei clienti. Possiamo discutere durante la consulenza iniziale dei tipi di progetti che abbiamo realizzato e delle tecnologie utilizzate.",
+              },
+              {
+                question: "Lavorate solo in Italia?",
+                answer: "Principalmente sì, ma siamo aperti a collaborazioni internazionali. La comunicazione può avvenire in italiano o inglese, e possiamo organizzare call online per progetti remoti.",
+              },
+              {
+                question: "Come funziona la consulenza gratuita?",
+                answer: "La consulenza è una chiacchierata senza impegno via WhatsApp o email dove analizziamo insieme le tue esigenze, ti spieghiamo come possiamo aiutarti e rispondiamo a tutte le tue domande. Nessun costo, nessun impegno.",
+              },
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className="glass-strong p-6 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-300"
+              >
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  {faq.question}
+                </h3>
+                <p className="text-foreground/70 leading-relaxed">
+                  {faq.answer}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-center mt-12"
+          >
+            <p className="text-foreground/70 mb-6">
+              Hai altre domande?
+            </p>
+            <Button
+              href="https://wa.me/393921723028"
+              variant="primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contattaci su WhatsApp
+            </Button>
+          </motion.div>
+        </Section>
+      </section>
 
       {/* Perché Haxies Dev */}
       <section className="py-32 relative z-10">
