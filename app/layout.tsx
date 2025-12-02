@@ -39,10 +39,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" className={inter.variable}>
-      <head>
-        <GoogleTag />
-      </head>
       <body>
+        <GoogleTag />
         <Navbar />
         <main className="min-h-screen">
           {children}
