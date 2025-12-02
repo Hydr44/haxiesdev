@@ -20,11 +20,25 @@ export default function CookieBanner() {
   const acceptCookies = () => {
     localStorage.setItem("cookieConsent", "accepted");
     setIsVisible(false);
+    // Abilita Google Tag quando l'utente accetta
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("consent", "update", {
+        analytics_storage: "granted",
+        ad_storage: "granted",
+      });
+    }
   };
 
   const rejectCookies = () => {
     localStorage.setItem("cookieConsent", "rejected");
     setIsVisible(false);
+    // Disabilita Google Tag quando l'utente rifiuta
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("consent", "update", {
+        analytics_storage: "denied",
+        ad_storage: "denied",
+      });
+    }
   };
 
   return (

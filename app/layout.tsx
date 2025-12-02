@@ -6,6 +6,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
 import CookieBanner from "@/components/CookieBanner";
+import GoogleTag from "@/components/GoogleTag";
+import GoogleAdsConversion from "@/components/GoogleAdsConversion";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -37,6 +39,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" className={inter.variable}>
+      <head>
+        <GoogleTag />
+      </head>
       <body>
         <Navbar />
         <main className="min-h-screen">
@@ -45,6 +50,7 @@ export default function RootLayout({
         <Footer />
         <StickyCTA />
         <CookieBanner />
+        <GoogleAdsConversion />
         <Analytics />
       </body>
     </html>
