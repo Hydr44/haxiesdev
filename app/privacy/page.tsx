@@ -108,7 +108,7 @@ export default function PrivacyPage() {
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>Rispondere alle tue richieste di contatto e consulenza</li>
               <li>Fornire i servizi richiesti</li>
-              <li>Migliorare il sito web e l'esperienza utente (analisi statistiche)</li>
+              <li>Migliorare il sito web e l&#39;esperienza utente (analisi statistiche)</li>
               <li>Rispettare obblighi di legge</li>
             </ul>
             <p className="mt-4">
@@ -210,7 +210,7 @@ export default function PrivacyPage() {
               <div>
                 <h3 className="font-bold text-foreground mb-2">Cookie di analisi (Vercel Analytics)</h3>
                 <p className="text-sm">
-                  Utilizzati per analizzare le visite al sito e migliorare l'esperienza utente. Richiedono il tuo consenso.
+                  Utilizzati per analizzare le visite al sito e migliorare l&#39;esperienza utente. Richiedono il tuo consenso.
                 </p>
               </div>
             </div>

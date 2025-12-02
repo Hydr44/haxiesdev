@@ -55,7 +55,7 @@ export default function AboutPage() {
           className="text-center mb-16"
         >
           <h1 className="text-5xl sm:text-6xl font-bold mb-8">
-            <span className="gradient-text">Chi c'è dietro</span>
+            <span className="gradient-text">Chi c&#39;è dietro</span>
             <br />
             <span className="text-foreground">Haxies Dev</span>
           </h1>
@@ -77,7 +77,7 @@ export default function AboutPage() {
             La visione di Haxies Dev nasce dalla convinzione che gli strumenti digitali moderni non debbano essere appannaggio solo delle grandi aziende. Voglio portare soluzioni tecnologiche di qualità anche alle realtà locali, ai professionisti e alle piccole attività che vogliono digitalizzarsi e crescere.
           </p>
           <p className="text-lg text-foreground/70 leading-relaxed">
-            Ogni progetto è un'opportunità per creare qualcosa di unico, che risponda alle esigenze specifiche del cliente e che faccia la differenza nel suo business.
+            Ogni progetto è un&#39;opportunità per creare qualcosa di unico, che risponda alle esigenze specifiche del cliente e che faccia la differenza nel suo business.
           </p>
         </motion.div>
       </Section>

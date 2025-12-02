@@ -200,7 +200,7 @@ export default function ContactPage() {
                   disabled={isSubmitting}
                   className="w-full px-4 py-3 sm:py-4 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all bg-background/50 text-foreground disabled:opacity-50 disabled:cursor-not-allowed text-base min-h-[44px]"
                 >
-                  <option value="">Seleziona un'opzione</option>
+                  <option value="">Seleziona un&#39;opzione</option>
                   <option value="app">Sviluppo App</option>
                   <option value="website">Sito Web</option>
                   <option value="software">Software su misura</option>
