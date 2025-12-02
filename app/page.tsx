@@ -207,7 +207,7 @@ export default function Home() {
       </section>
 
       {/* Come lavoriamo */}
-      <section className="py-32 relative z-10">
+      <section id="processo" className="py-32 relative z-10">
         <Section>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -284,7 +284,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="py-32 relative z-10">
+      <section id="faq" className="py-32 relative z-10">
         <Section maxWidth="4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
