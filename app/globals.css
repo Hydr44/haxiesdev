@@ -27,6 +27,35 @@ body {
   overflow-x: hidden;
 }
 
+/* Respect user preferences for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .gradient-text {
+    animation: none !important;
+  }
+  
+  .animated-bg {
+    animation: none !important;
+  }
+}
+
+/* Optimize for slow connections - reduce backdrop blur */
+@media (prefers-reduced-motion: reduce) {
+  .glass,
+  .glass-strong {
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+  }
+}
+
 /* Glassmorphism utility */
 .glass {
   background: rgba(255, 255, 255, 0.05);

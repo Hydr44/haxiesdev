@@ -22,7 +22,7 @@ export default function Button({
   rel,
   type = "button",
 }: ButtonProps) {
-  const baseClasses = "inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-full transition-all duration-300 relative overflow-hidden group";
+  const baseClasses = "inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-medium rounded-full transition-all duration-300 relative overflow-hidden group min-h-[44px] touch-manipulation";
   
   const variantClasses = {
     primary: "bg-gradient-to-r from-primary to-secondary text-white hover:shadow-neon border border-primary/50 shadow-lg hover:shadow-xl",

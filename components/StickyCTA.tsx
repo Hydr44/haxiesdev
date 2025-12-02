@@ -16,7 +16,8 @@ export default function StickyCTA() {
         href="https://wa.me/393921723028"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-3 bg-gradient-to-r from-primary to-secondary text-white px-6 py-4 rounded-full shadow-neon hover:shadow-glow transition-all duration-300 group"
+        className="flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-primary to-secondary text-white px-4 sm:px-6 py-3 sm:py-4 rounded-full shadow-neon hover:shadow-glow transition-all duration-300 group text-sm sm:text-base min-h-[44px] min-w-[44px] touch-manipulation"
+        style={{ touchAction: "manipulation" }}
       >
         <MessageCircle className="w-5 h-5" />
         <span className="font-semibold">Scrivici</span>

@@ -118,13 +118,15 @@ export default function ServicesPage() {
                   transition={{ duration: 0.8 }}
                   className={index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}
                 >
-                  <div className="relative h-full min-h-[400px] rounded-3xl overflow-hidden glass-strong border border-primary/20 group">
+                  <div className="relative h-full min-h-[300px] sm:min-h-[400px] rounded-3xl overflow-hidden glass-strong border border-primary/20 group">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
+                      loading="lazy"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      quality={85}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                   </div>

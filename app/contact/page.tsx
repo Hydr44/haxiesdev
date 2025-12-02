@@ -154,7 +154,7 @@ export default function ContactPage() {
                   value={formData.name}
                   onChange={handleChange}
                   disabled={isSubmitting}
-                  className="w-full px-4 py-3 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all bg-background/50 text-foreground placeholder:text-foreground/40 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-4 py-3 sm:py-4 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all bg-background/50 text-foreground placeholder:text-foreground/40 disabled:opacity-50 disabled:cursor-not-allowed text-base min-h-[44px]"
                   placeholder="Il tuo nome"
                 />
               </div>
@@ -174,7 +174,7 @@ export default function ContactPage() {
                   value={formData.email}
                   onChange={handleChange}
                   disabled={isSubmitting}
-                  className="w-full px-4 py-3 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all bg-background/50 text-foreground placeholder:text-foreground/40 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-4 py-3 sm:py-4 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all bg-background/50 text-foreground placeholder:text-foreground/40 disabled:opacity-50 disabled:cursor-not-allowed text-base min-h-[44px]"
                   placeholder="tua@email.com"
                 />
               </div>
@@ -193,7 +193,7 @@ export default function ContactPage() {
                   value={formData.projectType}
                   onChange={handleChange}
                   disabled={isSubmitting}
-                  className="w-full px-4 py-3 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all bg-background/50 text-foreground disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-4 py-3 sm:py-4 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all bg-background/50 text-foreground disabled:opacity-50 disabled:cursor-not-allowed text-base min-h-[44px]"
                 >
                   <option value="">Seleziona un&apos;opzione</option>
                   <option value="app">Sviluppo App</option>
@@ -218,7 +218,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   disabled={isSubmitting}
-                  className="w-full px-4 py-3 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all resize-none bg-background/50 text-foreground placeholder:text-foreground/40 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-4 py-3 sm:py-4 rounded-xl glass border border-primary/20 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary/40 transition-all resize-none bg-background/50 text-foreground placeholder:text-foreground/40 disabled:opacity-50 disabled:cursor-not-allowed text-base min-h-[120px]"
                   placeholder="Raccontaci del tuo progetto..."
                 />
               </div>

@@ -2,15 +2,21 @@
 
 import { motion } from "framer-motion";
 import { Smartphone, Globe, Settings, Target, Zap, Handshake, Rocket, Clock, CheckCircle } from "lucide-react";
+import { usePerformance } from "@/hooks/usePerformance";
 import Button from "@/components/Button";
 import Section from "@/components/Section";
 import TrustBar from "@/components/TrustBar";
 
 export default function Home() {
+  const { prefersReducedMotion, isSlowConnection } = usePerformance();
+  
   const scrollToServices = () => {
     const element = document.getElementById("servizi");
-    element?.scrollIntoView({ behavior: "smooth" });
+    element?.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth" });
   };
+  
+  // Disable heavy animations on slow devices
+  const shouldAnimate = !prefersReducedMotion && !isSlowConnection;
 
   return (
     <div className="pt-20 relative overflow-hidden">
@@ -20,38 +26,48 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative">
-        {/* Floating orbs */}
-        <motion.div
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            x: [0, -80, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"
-        />
+        {/* Floating orbs - Only animate on fast devices */}
+        {shouldAnimate && (
+          <>
+            <motion.div
+              animate={{
+                x: [0, 100, 0],
+                y: [0, -50, 0],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl hidden md:block"
+            />
+            <motion.div
+              animate={{
+                x: [0, -80, 0],
+                y: [0, 50, 0],
+              }}
+              transition={{
+                duration: 15,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl hidden md:block"
+            />
+          </>
+        )}
+        {!shouldAnimate && (
+          <>
+            <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl hidden md:block opacity-50" />
+            <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl hidden md:block opacity-50" />
+          </>
+        )}
 
-        <Section maxWidth="2xl" className="text-center py-32 relative z-10">
+        <Section maxWidth="2xl" className="text-center py-16 sm:py-24 md:py-32 relative z-10">
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={shouldAnimate ? { opacity: 0, y: 30 } : { opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-8 leading-tight"
+            transition={shouldAnimate ? { duration: 0.8 } : { duration: 0 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight px-4"
           >
             <span className="gradient-text">Costruiamo esperienze</span>
             <br />
@@ -59,19 +75,19 @@ export default function Home() {
           </motion.h1>
           
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={shouldAnimate ? { opacity: 0, y: 30 } : { opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl sm:text-2xl text-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed"
+            transition={shouldAnimate ? { duration: 0.8, delay: 0.2 } : { duration: 0 }}
+            className="text-lg sm:text-xl md:text-2xl text-foreground/80 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4"
           >
             Haxies Dev trasforma la tua attività in un prodotto digitale moderno: App, Siti Web e Software personalizzati.
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={shouldAnimate ? { opacity: 0, y: 30 } : { opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            transition={shouldAnimate ? { duration: 0.8, delay: 0.4 } : { duration: 0 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
           >
             <div className="flex flex-col items-center gap-3">
               <div className="relative">
