@@ -63,8 +63,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-primary/10 pt-8 text-center text-sm text-foreground/60">
-          <p>© 2025 Haxies Dev – Emmanuel Scozzarini</p>
+        <div className="border-t border-primary/10 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-foreground/60">
+            <p>© 2025 Haxies Dev – Emmanuel Scozzarini</p>
+            <div className="flex gap-6">
+              <Link href="/privacy" className="hover:text-primary transition-colors">
+                Privacy Policy
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

@@ -7,12 +7,12 @@ export default function TrustBar() {
   const stats = [
     {
       icon: CheckCircle,
-      number: "50+",
-      label: "Progetti realizzati",
+      number: "15+",
+      label: "Progetti completati",
     },
     {
       icon: Users,
-      number: "100%",
+      number: "12+",
       label: "Clienti soddisfatti",
     },
     {
@@ -22,8 +22,8 @@ export default function TrustBar() {
     },
     {
       icon: Award,
-      number: "5★",
-      label: "Qualità garantita",
+      number: "2024",
+      label: "Anno di fondazione",
     },
   ];
 

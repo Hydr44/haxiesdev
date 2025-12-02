@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
+import CookieBanner from "@/components/CookieBanner";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -43,6 +44,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <StickyCTA />
+        <CookieBanner />
         <Analytics />
       </body>
     </html>

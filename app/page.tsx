@@ -5,6 +5,7 @@ import { Smartphone, Globe, Settings, Target, Zap, Handshake, Rocket, Clock, Che
 import Button from "@/components/Button";
 import Section from "@/components/Section";
 import TrustBar from "@/components/TrustBar";
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   const scrollToServices = () => {
@@ -189,6 +190,9 @@ export default function Home() {
           </div>
         </Section>
       </section>
+
+      {/* Testimonianze */}
+      <Testimonials />
 
       {/* Perché Haxies Dev */}
       <section className="py-32 relative z-10">
