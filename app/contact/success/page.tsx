@@ -3,10 +3,43 @@
 import { motion } from "framer-motion";
 import { CheckCircle, ArrowLeft, MessageCircle } from "lucide-react";
 import Link from "next/link";
+import { useEffect } from "react";
 import Button from "@/components/Button";
 import Section from "@/components/Section";
 
+declare global {
+  interface Window {
+    gtag: (
+      command: string,
+      targetId: string,
+      config?: Record<string, any>
+    ) => void;
+    dataLayer: any[];
+  }
+}
+
 export default function ContactSuccessPage() {
+  useEffect(() => {
+    // Traccia la conversione direttamente nella pagina di successo
+    const trackConversion = () => {
+      if (typeof window !== "undefined" && window.gtag) {
+        window.gtag("event", "conversion", {
+          send_to: "AW-17775313058/7NH_CM3h5cobEKKB95tC",
+          value: 1.0,
+          currency: "EUR",
+        });
+        console.log("Google Ads conversion tracked");
+      } else {
+        // Se gtag non è ancora disponibile, riprova
+        setTimeout(trackConversion, 100);
+      }
+    };
+
+    // Traccia la conversione quando la pagina viene caricata
+    trackConversion();
+    setTimeout(trackConversion, 500);
+    setTimeout(trackConversion, 1000);
+  }, []);
   return (
     <div className="pt-32 pb-32 relative overflow-hidden min-h-screen flex items-center">
       {/* Background */}
