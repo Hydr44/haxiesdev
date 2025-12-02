@@ -108,9 +108,14 @@ export default function ContactPage() {
             transition={{ duration: 0.8 }}
             className="glass-strong p-8 rounded-3xl border border-primary/20"
           >
-            <h2 className="text-2xl font-bold text-foreground mb-6">
-              Invia un messaggio
-            </h2>
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-foreground mb-2">
+                Invia un messaggio
+              </h2>
+              <p className="text-sm text-foreground/70">
+                Compila il form in 30 secondi. Ti risponderemo entro 24 ore.
+              </p>
+            </div>
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Status Message */}
               {submitStatus !== "idle" && (
@@ -218,14 +223,21 @@ export default function ContactPage() {
                 />
               </div>
 
-              <Button 
-                type="submit" 
-                variant="primary" 
-                className="w-full"
-                onClick={() => {}}
-              >
-                {isSubmitting ? "Invio in corso..." : "Invia messaggio"}
-              </Button>
+              <div className="space-y-4">
+                <Button 
+                  type="submit" 
+                  variant="primary" 
+                  className="w-full"
+                  onClick={() => {}}
+                >
+                  {isSubmitting ? "Invio in corso..." : "Invia messaggio"}
+                </Button>
+                <p className="text-xs text-center text-foreground/60">
+                  Cliccando invia, accetti che i tuoi dati vengano utilizzati per rispondere alla tua richiesta. 
+                  <br />
+                  <span className="text-primary">Privacy garantita</span> - Non condividiamo i tuoi dati.
+                </p>
+              </div>
             </form>
           </motion.div>
 

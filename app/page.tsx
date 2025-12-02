@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Smartphone, Globe, Settings, Target, Zap, Handshake, Rocket } from "lucide-react";
+import { Smartphone, Globe, Settings, Target, Zap, Handshake, Rocket, Clock, CheckCircle } from "lucide-react";
 import Button from "@/components/Button";
 import Section from "@/components/Section";
+import TrustBar from "@/components/TrustBar";
 
 export default function Home() {
   const scrollToServices = () => {
@@ -72,14 +73,26 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Button
-              href="https://wa.me/393921723028"
-              variant="primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Richiedi una consulenza gratuita
-            </Button>
+            <div className="flex flex-col items-center gap-3">
+              <div className="relative">
+                <Button
+                  href="https://wa.me/393921723028"
+                  variant="primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-lg px-10 py-5"
+                >
+                  Consulenza Gratuita
+                </Button>
+                <span className="absolute -top-2 -right-2 bg-accent text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+                  FREE
+                </span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-foreground/70">
+                <Clock className="w-4 h-4 text-primary" />
+                <span>Risposta garantita in 24h</span>
+              </div>
+            </div>
             <Button
               onClick={scrollToServices}
               variant="ghost"
@@ -104,6 +117,9 @@ export default function Home() {
           </p>
         </Section>
       </motion.section>
+
+      {/* Trust Bar */}
+      <TrustBar />
 
       {/* Cosa facciamo */}
       <section id="servizi" className="py-32 relative z-10">
@@ -253,11 +269,25 @@ export default function Home() {
             className="glass-strong p-12 rounded-3xl border border-primary/30"
           >
             <h2 className="text-4xl sm:text-5xl font-bold mb-6 gradient-text">
-              Hai un&apos;idea o un&apos;attività da digitalizzare?
+              Pronto a digitalizzare la tua attività?
             </h2>
-            <p className="text-xl text-foreground/80 mb-12 max-w-2xl mx-auto">
-              Parliamone senza impegno.
+            <p className="text-xl text-foreground/80 mb-4 max-w-2xl mx-auto">
+              Inizia con una consulenza gratuita. Nessun impegno, solo risultati.
             </p>
+            <div className="flex items-center justify-center gap-6 mb-12 text-sm text-foreground/70">
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-primary" />
+                <span>Risposta in 24h</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-primary" />
+                <span>100% Gratuita</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Handshake className="w-4 h-4 text-primary" />
+                <span>Nessun impegno</span>
+              </div>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 href="https://wa.me/393921723028"
