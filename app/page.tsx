@@ -85,7 +85,7 @@ export default function Home() {
             transition={shouldAnimate ? { duration: 0.8, delay: 0.2 } : { duration: 0 }}
             className="text-lg sm:text-xl md:text-2xl text-foreground/80 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4"
           >
-            Haxies Dev trasforma la tua attività in un prodotto digitale moderno: App, Siti Web e Software personalizzati.
+            Haxies Dev trasforma la tua attività in un prodotto digitale moderno: <strong className="text-primary">Sviluppo App</strong>, <strong className="text-primary">Siti Web</strong> e <strong className="text-primary">Software Gestionale</strong> personalizzati per aziende in tutta Italia.
           </motion.p>
 
           <motion.div
@@ -190,8 +190,8 @@ export default function Home() {
             {[
               {
                 icon: Smartphone,
-                title: "Sviluppo App",
-                description: "App native e cross-platform per iOS e Android. Soluzioni personalizzate per gestire la tua attività, coinvolgere i clienti o automatizzare processi interni.",
+                title: "Sviluppo App Mobile",
+                description: "Sviluppo app native iOS e Android, app cross-platform e soluzioni mobile personalizzate. Creiamo app per gestire la tua attività, coinvolgere i clienti o automatizzare processi aziendali.",
                 gradient: "from-primary/20 to-secondary/20",
               },
               {
@@ -202,8 +202,8 @@ export default function Home() {
               },
               {
                 icon: Settings,
-                title: "Software su misura",
-                description: "Software gestionali, automazioni e piccoli SaaS personalizzati. Integrazioni con servizi esistenti e strumenti interni per ottimizzare i tuoi processi.",
+                title: "Software Gestionale su misura",
+                description: "Software gestionali personalizzati per magazzino, contabilità, CRM e controllo di gestione. Automazioni e integrazioni con sistemi esistenti per ottimizzare i processi aziendali.",
                 gradient: "from-accent/20 to-primary/20",
               },
             ].map((service, index) => {
@@ -339,20 +339,20 @@ export default function Home() {
                 answer: "Il costo dipende dalla complessità del progetto. Per un preventivo personalizzato, contattaci per una consulenza gratuita. Ti forniremo un preventivo dettagliato e trasparente senza impegno.",
               },
               {
+                question: "Fornite software gestionale personalizzato?",
+                answer: "Sì, sviluppiamo software gestionale su misura per aziende: gestione magazzino, inventario, contabilità, controllo di gestione e automazioni. Creiamo soluzioni personalizzate per le esigenze specifiche della tua attività.",
+              },
+              {
                 question: "Quanto tempo serve per completare un progetto?",
-                answer: "I tempi variano in base alla complessità: un sito web semplice può richiedere 2-4 settimane, mentre un'app più complessa può richiedere 2-4 mesi. Ti forniremo una timeline dettagliata nella proposta.",
+                answer: "I tempi variano in base alla complessità: un sito web semplice può richiedere 2-4 settimane, mentre un'app o un software gestionale più complesso può richiedere 2-4 mesi. Ti forniremo una timeline dettagliata nella proposta.",
+              },
+              {
+                question: "Lavorate solo a Napoli o in tutta Italia?",
+                answer: "Lavoriamo con aziende in tutta Italia. Possiamo organizzare consulenze online e seguire progetti da remoto. Per clienti locali a Napoli, possiamo anche organizzare incontri in presenza se necessario.",
               },
               {
                 question: "Fornite supporto dopo la consegna?",
                 answer: "Sì, includiamo supporto post-consegna per assicurarci che tutto funzioni perfettamente. Inoltre, offriamo piani di manutenzione e aggiornamenti su richiesta.",
-              },
-              {
-                question: "Posso vedere esempi di progetti realizzati?",
-                answer: "Alcuni progetti sono riservati per privacy dei clienti. Possiamo discutere durante la consulenza iniziale dei tipi di progetti che abbiamo realizzato e delle tecnologie utilizzate.",
-              },
-              {
-                question: "Lavorate solo in Italia?",
-                answer: "Principalmente sì, ma siamo aperti a collaborazioni internazionali. La comunicazione può avvenire in italiano o inglese, e possiamo organizzare call online per progetti remoti.",
               },
               {
                 question: "Come funziona la consulenza gratuita?",

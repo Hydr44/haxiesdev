@@ -17,9 +17,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Haxies Dev - Studio digitale per app, siti web e software su misura",
-  description: "Haxies Dev trasforma la tua attività in un prodotto digitale moderno: App, Siti Web e Software personalizzati. Studio digitale indipendente fondato da Emmanuel Scozzarini.",
-  keywords: "sviluppo app, siti web, software su misura, digitalizzazione, Next.js, React",
+  title: "Haxies Dev - Sviluppo App, Siti Web e Software Gestionale | Napoli e Italia",
+  description: "Sviluppo app mobile iOS e Android, siti web moderni e software gestionale personalizzato. Software per magazzino, controllo di gestione e automazioni aziendali. Servizi per aziende in tutta Italia.",
+  keywords: "sviluppo app, sviluppo app napoli, software gestionale, gestionale personalizzato, sviluppo software, siti web, programmatore informatico, software magazzino, controllo di gestione, app mobile",
   openGraph: {
     title: "Haxies Dev - Studio digitale per app, siti web e software su misura",
     description: "Haxies Dev trasforma la tua attività in un prodotto digitale moderno: App, Siti Web e Software personalizzati.",
