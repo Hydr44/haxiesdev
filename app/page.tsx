@@ -7,6 +7,7 @@ import Button from "@/components/Button";
 import Section from "@/components/Section";
 import TrustBar from "@/components/TrustBar";
 import TechLogos from "@/components/TechLogos";
+import PriceBadge from "@/components/PriceBadge";
 import Image from "next/image";
 
 export default function Home() {
@@ -83,59 +84,73 @@ export default function Home() {
             initial={shouldAnimate ? { opacity: 0, y: 30 } : { opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={shouldAnimate ? { duration: 0.8, delay: 0.2 } : { duration: 0 }}
-            className="text-lg sm:text-xl md:text-2xl text-foreground/80 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4"
+            className="text-lg sm:text-xl md:text-2xl text-foreground/80 mb-6 max-w-3xl mx-auto leading-relaxed px-4"
           >
-            Haxies Dev trasforma la tua attività in un prodotto digitale moderno: <strong className="text-primary">Sviluppo App</strong>, <strong className="text-primary">Siti Web</strong> e <strong className="text-primary">Software Gestionale</strong> personalizzati per aziende in tutta Italia.
+            <strong className="text-primary">Sviluppo App</strong>, <strong className="text-primary">Siti Web</strong> e <strong className="text-primary">Software Gestionale</strong> personalizzati. Trasformiamo la tua attività in un prodotto digitale moderno.
           </motion.p>
+
+          {/* Price Badge - Prezzi indicativi */}
+          <PriceBadge />
 
           <motion.div
             initial={shouldAnimate ? { opacity: 0, y: 30 } : { opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
             transition={shouldAnimate ? { duration: 0.8, delay: 0.4 } : { duration: 0 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 mt-8"
           >
-            <div className="flex flex-col items-center gap-3">
+            <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
               <div className="relative">
                 <Button
                   href="https://wa.me/393921723028"
                   variant="primary"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-lg px-10 py-5"
+                  className="text-xl px-12 py-6 w-full sm:w-auto text-center"
                 >
-                  Consulenza Gratuita
+                  🚀 Preventivo Gratuito
                 </Button>
                 <span className="absolute -top-2 -right-2 bg-accent text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">
                   FREE
                 </span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-foreground/70">
-                <Clock className="w-4 h-4 text-primary" />
-                <span>Risposta garantita in 24h</span>
+              <div className="flex flex-col items-center gap-2 text-sm">
+                <div className="flex items-center gap-2 text-foreground/80">
+                  <Clock className="w-4 h-4 text-primary" />
+                  <span className="font-semibold">Risposta in 24h garantita</span>
+                </div>
+                <div className="text-foreground/60">
+                  <span className="bg-primary/20 px-2 py-1 rounded">⚡ Posti limitati questo mese</span>
+                </div>
               </div>
             </div>
-            <Button
-              onClick={scrollToServices}
-              variant="ghost"
-            >
-              Scopri i servizi
-            </Button>
           </motion.div>
         </Section>
       </section>
 
-      {/* Brand Strip */}
+      {/* Brand Strip con Urgenza */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="py-12 glass border-y border-primary/20 relative z-10"
+        className="py-8 glass border-y border-primary/20 relative z-10"
       >
         <Section>
-          <p className="text-center text-foreground/70 text-sm font-medium">
-            Studio digitale indipendente fondato da Emmanuel Scozzarini.
-          </p>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+            <p className="text-center text-foreground/70 text-sm font-medium">
+              Studio digitale indipendente fondato da Emmanuel Scozzarini.
+            </p>
+            <div className="hidden md:block w-px h-6 bg-primary/20" />
+            <div className="flex items-center gap-2 text-sm">
+              <span className="text-foreground/60">✅</span>
+              <span className="text-foreground/80 font-medium">15+ Progetti completati</span>
+            </div>
+            <div className="hidden md:block w-px h-6 bg-primary/20" />
+            <div className="flex items-center gap-2 text-sm">
+              <span className="text-foreground/60">⭐</span>
+              <span className="text-foreground/80 font-medium">100% Soddisfatti</span>
+            </div>
+          </div>
         </Section>
       </motion.section>
 
@@ -226,9 +241,18 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-foreground/70 leading-relaxed">
+                    <p className="text-foreground/70 leading-relaxed mb-6">
                       {service.description}
                     </p>
+                    <Button
+                      href="https://wa.me/393921723028"
+                      variant="ghost"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full"
+                    >
+                      Preventivo Gratuito →
+                    </Button>
                   </div>
                 </motion.div>
               );
@@ -506,13 +530,38 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="glass-strong p-12 rounded-3xl border border-primary/30"
           >
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 gradient-text">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4 gradient-text">
               Pronto a digitalizzare la tua attività?
             </h2>
-            <p className="text-xl text-foreground/80 mb-4 max-w-2xl mx-auto">
-              Inizia con una consulenza gratuita. Nessun impegno, solo risultati.
+            <p className="text-2xl sm:text-3xl text-foreground mb-6 max-w-2xl mx-auto font-semibold">
+              Preventivo <span className="text-primary">Gratuito</span> in 24h
             </p>
-            <div className="flex items-center justify-center gap-6 mb-12 text-sm text-foreground/70">
+            <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
+              Nessun impegno. Risposta garantita. Trasformiamo la tua idea in realtà.
+            </p>
+            
+            {/* Urgenza */}
+            <div className="mb-8">
+              <div className="inline-block bg-accent/20 border border-accent/40 px-4 py-2 rounded-full">
+                <span className="text-sm font-semibold text-foreground">
+                  ⚡ Posti limitati questo mese - Prenota ora
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Button
+                href="https://wa.me/393921723028"
+                variant="primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl px-10 py-6"
+              >
+                🚀 Richiedi Preventivo Gratuito
+              </Button>
+            </div>
+
+            <div className="flex items-center justify-center gap-6 text-sm text-foreground/70 flex-wrap">
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-primary" />
                 <span>Risposta in 24h</span>
@@ -525,22 +574,6 @@ export default function Home() {
                 <Handshake className="w-4 h-4 text-primary" />
                 <span>Nessun impegno</span>
               </div>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                href="https://wa.me/393921723028"
-                variant="primary"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Scrivimi su WhatsApp
-              </Button>
-              <Button
-                href="/contact"
-                variant="ghost"
-              >
-                Vai alla pagina contatti
-              </Button>
             </div>
           </motion.div>
         </Section>
