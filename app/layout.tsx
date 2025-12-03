@@ -8,6 +8,7 @@ import StickyCTA from "@/components/StickyCTA";
 import CookieBanner from "@/components/CookieBanner";
 import GoogleAdsConversion from "@/components/GoogleAdsConversion";
 import GoogleTagScript from "./google-tag-script";
+import WhatsAppTracker from "@/components/WhatsAppTracker";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -51,6 +52,7 @@ export default function RootLayout({
         <StickyCTA />
         <CookieBanner />
         <GoogleAdsConversion />
+        <WhatsAppTracker />
         <Analytics />
       </body>
     </html>

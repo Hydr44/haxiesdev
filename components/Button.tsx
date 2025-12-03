@@ -1,6 +1,17 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+declare global {
+  interface Window {
+    gtag: (
+      command: string,
+      targetId: string,
+      config?: Record<string, any>
+    ) => void;
+    dataLayer: any[];
+  }
+}
+
 interface ButtonProps {
   children: React.ReactNode;
   href?: string;
@@ -32,10 +43,22 @@ export default function Button({
 
   const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;
 
+  const handleClick = () => {
+    // Traccia click su WhatsApp
+    if (href && href.includes("wa.me") && typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "whatsapp_click", {
+        event_category: "engagement",
+        event_label: "WhatsApp Button Click",
+        value: 1,
+      });
+      console.log("WhatsApp click tracked from Button component");
+    }
+  };
+
   if (href) {
     return (
       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-        <Link href={href} target={target} rel={rel} className={classes}>
+        <Link href={href} target={target} rel={rel} className={classes} onClick={handleClick}>
           <span className="relative z-10">{children}</span>
           {variant === "primary" && (
             <motion.div

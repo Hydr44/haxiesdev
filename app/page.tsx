@@ -241,7 +241,7 @@ export default function Home() {
               {
                 step: "03",
                 title: "Sviluppo",
-                description: "Lavoriamo al tuo progetto con aggiornamenti regolari. Puoi seguire l&#39;avanzamento e dare feedback in tempo reale.",
+                description: "Lavoriamo al tuo progetto con aggiornamenti regolari. Puoi seguire l'avanzamento e dare feedback in tempo reale.",
                 icon: Rocket,
               },
               {
@@ -304,12 +304,12 @@ export default function Home() {
           <div className="space-y-6">
             {[
               {
-                question: "Quanto costa sviluppare un&#39;app o un sito web?",
+                question: "Quanto costa sviluppare un'app o un sito web?",
                 answer: "Il costo dipende dalla complessità del progetto. Per un preventivo personalizzato, contattaci per una consulenza gratuita. Ti forniremo un preventivo dettagliato e trasparente senza impegno.",
               },
               {
                 question: "Quanto tempo serve per completare un progetto?",
-                answer: "I tempi variano in base alla complessità: un sito web semplice può richiedere 2-4 settimane, mentre un&#39;app più complessa può richiedere 2-4 mesi. Ti forniremo una timeline dettagliata nella proposta.",
+                answer: "I tempi variano in base alla complessità: un sito web semplice può richiedere 2-4 settimane, mentre un'app più complessa può richiedere 2-4 mesi. Ti forniremo una timeline dettagliata nella proposta.",
               },
               {
                 question: "Fornite supporto dopo la consegna?",
