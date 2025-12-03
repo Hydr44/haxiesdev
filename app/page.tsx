@@ -533,28 +533,31 @@ export default function Home() {
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 gradient-text">
               Pronto a digitalizzare la tua attività?
             </h2>
-            <p className="text-2xl sm:text-3xl text-foreground mb-6 max-w-2xl mx-auto font-semibold">
-              Preventivo <span className="text-primary">Gratuito</span> in 24h
-            </p>
-            <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
-              Nessun impegno. Risposta garantita. Trasformiamo la tua idea in realtà.
-            </p>
             
-            {/* Urgenza e Offerta */}
-            <div className="mb-8 flex flex-col items-center gap-3">
-              <div className="inline-block bg-gradient-to-r from-accent/30 to-primary/30 border-2 border-accent/50 px-6 py-3 rounded-full relative overflow-hidden">
+            {/* Offerta Prominente */}
+            <div className="mb-6">
+              <div className="inline-block bg-gradient-to-r from-accent/30 to-primary/30 border-2 border-accent/50 px-6 py-4 rounded-2xl relative overflow-hidden mb-4">
                 <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-primary/20 animate-pulse" />
-                <div className="relative z-10 flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-accent" />
-                  <span className="text-base font-bold text-foreground">
-                    🎉 Offerta Lancio: Sconto 50% per i primi 10 clienti
-                  </span>
+                <div className="relative z-10 text-center">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <Sparkles className="w-6 h-6 text-accent" />
+                    <span className="text-2xl sm:text-3xl font-bold text-foreground">
+                      Sconto 50% per i primi 10 clienti
+                    </span>
+                  </div>
+                  <p className="text-lg text-foreground/90">
+                    Siti Web da <span className="line-through text-foreground/50">€ 1.200</span> <span className="text-primary font-bold text-xl">€ 600</span> • 
+                    App da <span className="line-through text-foreground/50">€ 2.400</span> <span className="text-primary font-bold text-xl">€ 1.200</span>
+                  </p>
                 </div>
               </div>
-              <div className="inline-block bg-primary/20 border border-primary/40 px-4 py-2 rounded-full">
-                <span className="text-sm font-semibold text-foreground">
+              <div className="text-center">
+                <p className="text-xl text-foreground/80 mb-2">
+                  Preventivo <strong className="text-primary">Gratuito</strong> in 24h
+                </p>
+                <p className="text-sm text-foreground/60">
                   ⚡ Posti limitati - Prenota ora
-                </span>
+                </p>
               </div>
             </div>
 
