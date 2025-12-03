@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Smartphone, Globe, Settings, Target, Zap, Handshake, Rocket, Clock, CheckCircle } from "lucide-react";
+import { Smartphone, Globe, Settings, Target, Zap, Handshake, Rocket, Clock, CheckCircle, Sparkles } from "lucide-react";
 import { usePerformance } from "@/hooks/usePerformance";
 import Button from "@/components/Button";
 import Section from "@/components/Section";
@@ -540,11 +540,20 @@ export default function Home() {
               Nessun impegno. Risposta garantita. Trasformiamo la tua idea in realtà.
             </p>
             
-            {/* Urgenza */}
-            <div className="mb-8">
-              <div className="inline-block bg-accent/20 border border-accent/40 px-4 py-2 rounded-full">
+            {/* Urgenza e Offerta */}
+            <div className="mb-8 flex flex-col items-center gap-3">
+              <div className="inline-block bg-gradient-to-r from-accent/30 to-primary/30 border-2 border-accent/50 px-6 py-3 rounded-full relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-primary/20 animate-pulse" />
+                <div className="relative z-10 flex items-center gap-2">
+                  <Sparkles className="w-5 h-5 text-accent" />
+                  <span className="text-base font-bold text-foreground">
+                    🎉 Offerta Lancio: Sconto 50% per i primi 10 clienti
+                  </span>
+                </div>
+              </div>
+              <div className="inline-block bg-primary/20 border border-primary/40 px-4 py-2 rounded-full">
                 <span className="text-sm font-semibold text-foreground">
-                  ⚡ Posti limitati questo mese - Prenota ora
+                  ⚡ Posti limitati - Prenota ora
                 </span>
               </div>
             </div>
