@@ -542,12 +542,11 @@ export default function Home() {
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <Sparkles className="w-6 h-6 text-accent" />
                     <span className="text-2xl sm:text-3xl font-bold text-foreground">
-                      Sconto 50% per i primi 10 clienti
+                      Offerta Lancio: Sconto 50% per i primi 10 clienti
                     </span>
                   </div>
                   <p className="text-lg text-foreground/90">
-                    Siti Web da <span className="line-through text-foreground/50">€ 1.200</span> <span className="text-primary font-bold text-xl">€ 600</span> • 
-                    App da <span className="line-through text-foreground/50">€ 2.400</span> <span className="text-primary font-bold text-xl">€ 1.200</span>
+                    Prezzi personalizzati in base alle tue esigenze
                   </p>
                 </div>
               </div>
