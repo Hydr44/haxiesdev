@@ -19,14 +19,14 @@ export function useWhatsAppTracking() {
     const trackWhatsAppClick = (element: HTMLElement) => {
       const href = element.getAttribute("href");
       if (href && href.includes("wa.me")) {
-        // Traccia evento personalizzato per Google Analytics
+        // Traccia evento personalizzato per Google Analytics (NON conversione)
         if (typeof window !== "undefined" && window.gtag) {
           window.gtag("event", "whatsapp_click", {
             event_category: "engagement",
             event_label: "WhatsApp Button Click",
-            value: 1,
+            non_interaction: true, // Non conta come conversione
           });
-          console.log("WhatsApp click tracked");
+          console.log("WhatsApp click tracked (analytics only)");
         }
       }
     };

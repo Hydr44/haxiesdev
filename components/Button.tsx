@@ -44,14 +44,14 @@ export default function Button({
   const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;
 
   const handleClick = () => {
-    // Traccia click su WhatsApp
+    // Traccia click su WhatsApp (solo per analytics, NON conversione)
     if (href && href.includes("wa.me") && typeof window !== "undefined" && window.gtag) {
       window.gtag("event", "whatsapp_click", {
         event_category: "engagement",
         event_label: "WhatsApp Button Click",
-        value: 1,
+        non_interaction: true, // Non conta come conversione
       });
-      console.log("WhatsApp click tracked from Button component");
+      console.log("WhatsApp click tracked (analytics only)");
     }
   };
 
