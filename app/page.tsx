@@ -6,6 +6,8 @@ import { usePerformance } from "@/hooks/usePerformance";
 import Button from "@/components/Button";
 import Section from "@/components/Section";
 import TrustBar from "@/components/TrustBar";
+import TechLogos from "@/components/TechLogos";
+import Image from "next/image";
 
 export default function Home() {
   const { prefersReducedMotion, isSlowConnection } = usePerformance();
@@ -26,6 +28,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative">
+        {/* Tech Logos floating */}
+        <TechLogos />
+        
         {/* Floating orbs - Only animate on fast devices */}
         {shouldAnimate && (
           <>
@@ -153,6 +158,32 @@ export default function Home() {
             <p className="text-xl text-foreground/70 max-w-2xl mx-auto">
               Soluzioni digitali su misura per trasformare la tua attività
             </p>
+          </motion.div>
+
+          {/* Visual element - Devices mockup */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-16 flex justify-center"
+          >
+            <div className="relative w-full max-w-4xl h-64 rounded-3xl overflow-hidden glass-strong border border-primary/20">
+              <Image
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=400&fit=crop"
+                alt="Digital solutions"
+                fill
+                className="object-cover opacity-40"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center px-8">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">Tecnologie Moderne</h3>
+                  <p className="text-foreground/80">Next.js • React • TypeScript • Cloud</p>
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -381,6 +412,35 @@ export default function Home() {
             <h2 className="text-4xl sm:text-5xl font-bold mb-6">
               <span className="gradient-text">Perché Haxies Dev</span>
             </h2>
+          </motion.div>
+
+          {/* Visual element - Tech stack */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-16 flex flex-wrap justify-center gap-4"
+          >
+            {[
+              { name: "Next.js", color: "from-gray-800 to-gray-900" },
+              { name: "React", color: "from-blue-500 to-blue-600" },
+              { name: "TypeScript", color: "from-blue-600 to-blue-700" },
+              { name: "Tailwind CSS", color: "from-cyan-500 to-cyan-600" },
+              { name: "Node.js", color: "from-green-600 to-green-700" },
+            ].map((tech, index) => (
+              <motion.div
+                key={tech.name}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+                whileHover={{ scale: 1.1, y: -5 }}
+                className="glass-strong px-6 py-3 rounded-full border border-primary/20 hover:border-primary/40 transition-all"
+              >
+                <span className="text-sm font-medium text-foreground">{tech.name}</span>
+              </motion.div>
+            ))}
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
